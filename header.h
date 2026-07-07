@@ -3,6 +3,11 @@
 
 void	ft_print_menu(void);
 void	ft_print_commands(void);
+//******************************************************************************************************************************************************************
+//    cool math game
+//******************************************************************************************************************************************************************
+void    ft_print_game_grid(int one, int two);
+void	ft_play_cool_math_game(void);
 
 void	ft_draw_board(int width, int height, int snake_x, int snake_y, int food_x, int food_y, char walls);
 void	ft_draw_snake(char *snake);

@@ -1,5 +1,10 @@
 #include "../header.h"
 
+void	ft_clear_screen(void)
+{
+	write(1, "\033[2J\033[H", 7);
+}
+
 int    ft_update_food(int food, int width, int height)
 {
     food = (rand() % (width - 2)) + 1;
