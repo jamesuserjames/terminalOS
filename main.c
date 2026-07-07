@@ -3,17 +3,16 @@
 int main(void)
 {
     int     num;
-    char    imput;
    
     ft_print_menu();
     scanf("%d", &num);
     ft_clear_screen();
     if (num == 1)
         ft_play_cool_math_game();
+    else if (num == 2)
+        ft_play_snake();
     else if (num == 3)
-    {
         ft_print_commands();
-    }
     return 0;
 }
 

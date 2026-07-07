@@ -6,6 +6,7 @@ void	ft_enable_raw_mode(void)
 {
 	struct termios	raw;
 
+	fcntl(STDIN_FILENO, F_SETFL, O_NONBLOCK);
 	tcgetattr(STDIN_FILENO, &old);
 	raw = old;
 	raw.c_lflag &= ~(ICANON | ECHO);

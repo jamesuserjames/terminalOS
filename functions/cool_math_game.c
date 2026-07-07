@@ -23,6 +23,26 @@ void    ft_print_game_grid(int one, int two)
 	,167);
 }
 
+void    ft_print_result(int result)
+{
+	if (result == 1)
+	{
+		write(1,
+		"╔══════════════════════════════════════╗\n"
+		"║                CORRECT               ║\n"
+		"╠══════════════════════════════════════╣\n"
+		,288);
+	}
+	else if (result == 0)
+	{
+		write(1,
+		"╔══════════════════════════════════════╗\n"
+		"║                 FAIL                 ║\n"
+		"╠══════════════════════════════════════╣\n"
+		,288);
+	}
+}
+
 void	ft_play_cool_math_game(void)
 {
     int     answer;
@@ -34,15 +54,14 @@ void	ft_play_cool_math_game(void)
 	{
 		one = rand() % 9;
 		two = rand() % 9;
+		ft_clear_screen();
 		ft_print_game_grid(one, two);
 		scanf("%d", &answer);
-		if (answer == one * two)
-			write(1, "corect", 6);
-		else
-		{
-			write(1, "false", 5);
-		}
-		sleep(1);
 		ft_clear_screen();
+		if (answer == one * two)
+			ft_print_result(1);
+		else
+			ft_print_result(0);
+		sleep(1);
 	}
 }
